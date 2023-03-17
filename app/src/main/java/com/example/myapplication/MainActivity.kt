@@ -55,4 +55,5 @@ class MainActivity : AppCompatActivity() {
         binding.txtNewTaskDesc.setText("")
         Toast.makeText(this,"Task added",Toast.LENGTH_LONG).show()
     }
+
 }
