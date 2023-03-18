@@ -7,7 +7,8 @@ import android.widget.BaseAdapter
 
 class TaskAdapter(context:Context,taskList:MutableList<Task>):BaseAdapter() {
     override fun getCount(): Int {
-        TODO("Not yet implemented")
+        var i:Int=0
+        return i
     }
 
     override fun getItem(position: Int): Any {
