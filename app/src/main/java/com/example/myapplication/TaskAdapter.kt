@@ -15,11 +15,9 @@ class TaskAdapter(context:Context,taskList:MutableList<Task>):BaseAdapter() {
     override fun getCount(): Int {
         return _taskList.size
     }
-
     override fun getItem(position: Int): Any {
         return _taskList.get(position)
     }
-
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
@@ -28,26 +26,26 @@ class TaskAdapter(context:Context,taskList:MutableList<Task>):BaseAdapter() {
         val itemText:String=_taskList.get(position).taskDesc as String
         val done:Boolean=_taskList.get(position).done as Boolean
         val view:View
-        val listRowHandler:ListRowHandler
+        val listRowHolder:ListRowHolder
         if(convertView==null)
         {
             view=_inflater.inflate(R.layout.task_row,parent,false)
-            listRowHandler= ListRowHandler(view)
-            view.tag=listRowHandler
+            listRowHolder= ListRowHolder(view)
+            view.tag=listRowHolder
         }
         else
         {
             view=convertView
-            listRowHandler=view.tag as ListRowHandler
+            listRowHolder=view.tag as ListRowHolder
         }
-        listRowHandler.desc.text=itemText
-        listRowHandler.done.isChecked=done
+        listRowHolder.desc.text=itemText
+        listRowHolder.done.isChecked=done
         return view
     }
-    private class ListRowHandler(row:View?)
+    private class ListRowHolder(row:View?)
     {
-        val desc:TextView=row!!.findViewById(R.id.txtNewTaskDesc)
-        val done:CheckBox=row!!.findViewById(R.id.chkDone)
-        val remove:ImageButton=row!!.findViewById(R.id.btnRemove)
+        val desc:TextView=row!!.findViewById(R.id.txtTaskDesc) as TextView
+        val done:CheckBox=row!!.findViewById(R.id.chkDone) as CheckBox
+        val remove:ImageButton=row!!.findViewById(R.id.btnRemove) as ImageButton
     }
 }
