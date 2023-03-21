@@ -15,7 +15,7 @@ import android.widget.Toast
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.firebase.database.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),TaskRowListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var _db:DatabaseReference;
@@ -94,4 +94,8 @@ class MainActivity : AppCompatActivity() {
         _adapter.notifyDataSetChanged()
     }
 
+    override fun onTaskChanger(objectId: String, isDone: Boolean) {
+        val task=_db.child(Statics.FIREBASE_TASK).child(objectId).child("done")
+        task.setValue(isDone)
+    }
 }

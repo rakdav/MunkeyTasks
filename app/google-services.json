@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "326135465823",
+    "firebase_url": "https://munkey-b9c9d-default-rtdb.firebaseio.com",
+    "project_id": "munkey-b9c9d",
+    "storage_bucket": "munkey-b9c9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326135465823:android:5e2972f2475722e16dd8ea",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326135465823-riino2uqsb48qg0uf44r4fe206sqpikl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDG3fKjce5rUCaNY0gLsgNZ20AeD_C2c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326135465823-riino2uqsb48qg0uf44r4fe206sqpikl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

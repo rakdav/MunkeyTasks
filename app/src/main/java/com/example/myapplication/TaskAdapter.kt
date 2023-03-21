@@ -12,6 +12,8 @@ import android.widget.TextView
 class TaskAdapter(context:Context,taskList:MutableList<Task>):BaseAdapter() {
     private val _inflater:LayoutInflater=LayoutInflater.from(context)
     private val _taskList=taskList
+    private var _rowListener:TaskRowListener=context as TaskRowListener
+
     override fun getCount(): Int {
         return _taskList.size
     }
@@ -40,6 +42,9 @@ class TaskAdapter(context:Context,taskList:MutableList<Task>):BaseAdapter() {
         }
         listRowHolder.desc.text=itemText
         listRowHolder.done.isChecked=done
+        listRowHolder.done.setOnClickListener {
+            _rowListener.onTaskChanger(objectId,!done)
+        }
         return view
     }
     private class ListRowHolder(row:View?)
