@@ -98,4 +98,9 @@ class MainActivity : AppCompatActivity(),TaskRowListener {
         val task=_db.child(Statics.FIREBASE_TASK).child(objectId).child("done")
         task.setValue(isDone)
     }
+
+    override fun OnTaskDelete(objectId: String) {
+        val task=_db.child(Statics.FIREBASE_TASK).child(objectId)
+        task.removeValue()
+    }
 }

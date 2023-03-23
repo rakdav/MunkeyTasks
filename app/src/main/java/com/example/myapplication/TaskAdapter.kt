@@ -45,6 +45,9 @@ class TaskAdapter(context:Context,taskList:MutableList<Task>):BaseAdapter() {
         listRowHolder.done.setOnClickListener {
             _rowListener.onTaskChanger(objectId,!done)
         }
+        listRowHolder.remove.setOnClickListener{
+            _rowListener.OnTaskDelete(objectId)
+        }
         return view
     }
     private class ListRowHolder(row:View?)
